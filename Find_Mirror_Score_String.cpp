@@ -1,3 +1,7 @@
+#include <iostream>
+#include <unordered_map>
+#include <stack>
+#include <string>
 class Solution {
 public:
     long long calculateScore(string s) {
