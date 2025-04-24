@@ -19,3 +19,6 @@ class Solution {
         }
     }
 };
+
+
+/*---- Using Bit Manipulation -----*/
