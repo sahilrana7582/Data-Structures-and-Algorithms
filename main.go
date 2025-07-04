@@ -27,17 +27,12 @@ func (ga GoAssignment) doTheWork(data []string) {
 		parts := strings.Split(entry, "#$#")
 		ip := strings.Split(parts[1], "~$~")[0]
 		for i := 0; i < len(parts)-1; i++ {
-			if strings.Contains(parts[i], "PageLoadTime") {
-				val, _ := strconv.Atoi(strings.Split(parts[i+1], "~$~")[0])
-				ipMap[ip] = append(ipMap[ip], val)
-			}
+			if strings.Contains(parts[i], "PageLoadTime") { val, _ := strconv.Atoi(strings.Split(parts[i+1], "~$~")[0]); ipMap[ip] = append(ipMap[ip], val) }
 		}
 	}
 	for ip, arr := range ipMap {
 		sum := 0
-		for _, v := range arr {
-			sum += v
-		}
+		for _, v := range arr { sum += v }
 		fmt.Println("IP:", ip, "Avg PageLoadTime:", sum/len(arr))
 	}
 }
